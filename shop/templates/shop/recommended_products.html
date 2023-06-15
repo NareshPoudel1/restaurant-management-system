@@ -1,0 +1,19 @@
+{% extends 'shop/basic.html' %}
+{% block content %}
+<h2>Recommended Products</h2>
+{% if recommended_products %}
+    <ul>
+        {% for recommended_product in recommended_products %}
+            <li>{{ recommended_product.name }} - {{ recommended_product.price }}</li>
+        {% endfor %}
+    </ul>
+    {% if indices %}
+        <p>Indices: {{ indices }}</p>
+        {% for index in indices %}
+            <p>Index: {{ index }}</p>
+        {% endfor %}
+    {% endif %}
+{% else %}
+    <p>No recommended products found.</p>
+{% endif %}
+{% endblock %}
